@@ -1,10 +1,16 @@
 const fs = require("node:fs/promises");
+const CustomWritable = require("../custom-writable/customWritable");
 
 (async () => {
   console.time("stream_benchmark");
   const filehandle = await fs.open("text.txt", "w");
 
   const stream = await filehandle.createWriteStream();
+
+  // const stream = new CustomWritable({
+  //   highWaterMark: 1800,
+  //   filename: "text.txt",
+  // }); // custom implementation
 
   // 8 bits = 1 byte
   // 1000 bytes = 1 kilobyte
