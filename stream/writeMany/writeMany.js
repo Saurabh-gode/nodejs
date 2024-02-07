@@ -21,11 +21,11 @@ const CustomWritable = require("../custom-writable/customWritable");
   let i = 0;
 
   const writeMany = () => {
-    while (i <= 999999) {
+    while (i <= 99999999999) {
       const bufr = Buffer.from(` ${i} `, "utf-8");
 
       // handle last chunk of data
-      if (i === 999999) {
+      if (i === 99999999999) {
         return stream.end(bufr);
       }
 
