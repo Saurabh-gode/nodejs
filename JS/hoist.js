@@ -32,8 +32,21 @@
 
 // console.log("x is : ", test()); // prints 6
 
-{
-  const func = () => console.log(letvar);
-  let letvar = 3;
-  func();
+// {
+//   const func = () => console.log(letvar);
+//   let letvar = 3;
+//   func();
+// }
+
+var n1 = 20;
+var n2 = 3;
+function getScore() {
+  var n1 = 2;
+  var n2 = 3;
+  function add() {
+    return n1 + n2;
+  }
+  return add();
 }
+
+console.log(getScore());
