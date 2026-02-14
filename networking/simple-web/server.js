@@ -12,6 +12,7 @@ server.on("request", async (request, response) => {
     const fileStream = filehandle.createReadStream();
     fileStream.pipe(response);
   }
+  
   if (request.url === "/style.css" && request.method === "GET") {
     response.setHeader("content-type", "text/css");
 
@@ -22,7 +23,6 @@ server.on("request", async (request, response) => {
   }
 
   if (request.url === "/login" && request.method === "POST") {
-    response.setHeader("content-type", "application/json");
     response.setHeader("content-type", "application/json");
 
     response.statusCode = 200;
