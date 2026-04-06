@@ -17,11 +17,11 @@ const request = http.request({
 // this event is emmited only once
 request.on("response", (response) => {});
 
-// request.write(JSON.stringify({ message: "Hii there!" }));
-// request.write(JSON.stringify({ message: "How are you doing?" }));
-// request.write(JSON.stringify({ message: "Hii there!" }));
+request.write(JSON.stringify({ message: "Hii there!" }));
+request.write(JSON.stringify({ message: "How are you doing?" }));
+request.write(JSON.stringify({ message: "Hii there!" }));
 
-request.end(JSON.stringify({ message: "this is the last message!" }));
+// request.end(JSON.stringify({ message: "this is the last message!" }));
 
 request.on("response", (response) => {
   console.log("--------------headers: -------------");

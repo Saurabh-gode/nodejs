@@ -6,8 +6,8 @@
 
 // function varTest() {
 //   var x = 10;
-//   var x; // this works does not throw error for using the save variable name
-//   console.log("X is " + x);
+//   var x; // this works does not throw error for using the same variable name
+//   console.log("X is " + x); and we get 10 here. above line does not overrider value with undefined
 // }
 
 // function letTest() {
@@ -19,23 +19,27 @@
 // varTest();
 // letTest();
 
-// var x = 10;
 
+
+// var x = 10;
 // function test() {
 //   if (x === undefined) {
 //     var x = 6; // local scope shadows global variables because of the "re-declaration"
-//     return 6;
+//     return x;
 //   } else {
 //     return 10;
 //   }
 // }
-
 // console.log("x is : ", test()); // prints 6
 
+
+
 // {
+//    TDZ Start
 //   const func = () => console.log(letvar);
-//   let letvar = 3;
-//   func();
+//    TDZ end
+//   let letvar = 3; // TDZ end
+//   func(); // prints 3
 // }
 
 var n1 = 20;
